@@ -1,0 +1,311 @@
+<!-- File: conseils_admin.html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Conseils – Administrateur</title>
+  <link rel="icon" href="img/logowhite.png" type="image/svg+xml">
+  <link rel="stylesheet" href="general.css">
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container nav-container">
+      <div class="logo"></div>
+      <nav class="nav">
+        <a href="général.html">Accueil</a>
+        <a href="services.html">Nos services</a>
+        <a href="About.html">About Us</a>
+        <a href="conseils.html" class="active">Conseils</a>
+        <a href="Tarifs.html">Tarifs</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO AVEC DÉGRADÉ -->
+    <section class="intro" style="position:relative; height:400px; background-image:url('img/abstrait.png'); background-size:cover; background-position:center;">
+      <div style="position:absolute; top:0; left:0; right:0; bottom:0; background:linear-gradient(0deg, rgba(255,255,255,1) 20%, rgba(255,255,255,0) 100%);"></div>
+      <div class="intro-text" style="position:relative; z-index:1;">
+        <h1>Conseils Administrateurs</h1>
+      </div>
+    </section>
+
+    <!-- subnav toujours visible en bas -->
+    <nav class="subnav-bar" id="subnav-admin">
+      <a href="#" data-target="pres" class="active">Présentation</a>
+      <a href="#" data-target="conf">Configuration</a>
+      <a href="#" data-target="sec">Sécurité</a>
+      <a href="#" data-target="maint">Maintenance</a>
+      <a href="#" data-target="opt">Optimisation</a>
+      <a href="#" data-target="sauv">Sauvegarde</a>
+      <a href="#" data-target="faq">FAQ</a>
+    </nav>
+
+    <!-- Sections très espacées -->
+    <section id="pres" class="tab-content active">
+      <h2>Présentation</h2>
+      <h3>Pourquoi ce rôle ?</h3>
+      <p>
+        En tant qu’administrateur de Bonaventis, vous êtes le garant du bon déploiement et du fonctionnement quotidien de la plateforme. Votre rôle consiste à centraliser la gestion des utilisateurs, à superviser la création et l’attribution des missions, et à assurer la qualité des données générées.
+      </p>
+      <p>
+        Vous veillez également à accompagner vos équipes dans la prise en main des fonctionnalités, à structurer les processus internes et à maintenir un environnement technique stable et sécurisé.
+      </p>
+      <h3>Enjeux principaux</h3>
+      <p>
+        La réussite du déploiement repose sur une configuration initiale précise, une politique de sécurité renforcée et un support proactif. Vous devez anticiper les besoins des encadrants et des participants, et adapter les ressources pour garantir une expérience fluide.
+      </p>
+      <p>
+        Votre vigilance porte aussi sur la planification des interventions, le suivi des performances, et la formation continue des équipes, afin d’assurer une adoption rapide et durable de la plateforme Bonaventis.
+      </p>
+    </section>
+
+    <section id="conf" class="tab-content">
+      <h2>Configuration</h2>
+      <h3>Étape 1 : Paramétrage initial</h3>
+      <p>
+        Accédez à la page « Paramètres généraux » du volet administrateur. Complétez les informations de votre établissement (nom, logo, coordonnées), définissez l’unité de bons, le calendrier scolaire et la valeur monétaire d’un bon, puis enregistrez chaque section.
+      </p>
+      <h3>Étape 2 : Droits et accès</h3>
+      <p>
+        Dans « Gestion des utilisateurs », ajoutez les membres de votre équipe et attribuez-leur un rôle (administrateur, coordinateur, encadrant). Ajustez les permissions (création de missions, consultation des rapports, gestion des bons) pour garantir un contrôle précis des actions.
+      </p>
+      <p>
+        Veillez à revoir régulièrement la liste des comptes et à mettre à jour les accès selon l’évolution des responsabilités. Une bonne gouvernance des droits réduit les risques d’erreur ou de sécurité.
+      </p>
+    </section>
+
+    <section id="sec" class="tab-content">
+      <h2>Sécurité</h2>
+      <h3>Mots de passe</h3>
+      <p>
+        Imposer une politique de mot de passe robuste (longueur minimale, complexité) et activer la réinitialisation automatique tous les 90 jours. Encouragez l’utilisation d’un gestionnaire de mots de passe pour renforcer la protection.
+      </p>
+      <p>
+        Configurez des alertes en cas de tentatives de connexion suspectes et prévoyez un processus de réinitialisation sécurisée via e-mail ou lien à usage unique.
+      </p>
+      <h3>Mises à jour</h3>
+      <p>
+        Activez les mises à jour automatiques pour les correctifs de sécurité critiques et planifiez les mises à jour majeures pendant les vacances scolaires ou estivales pour limiter l’impact sur les utilisateurs.
+      </p>
+      <p>
+        Maintenez un environnement de test pour valider les nouveaux patchs avant déploiement en production et prévoir un plan de rollback rapide en cas de problème.
+      </p>
+    </section>
+
+    <section id="maint" class="tab-content">
+      <h2>Maintenance</h2>
+      <h3>Planification</h3>
+      <p>
+        Créez un calendrier de maintenance partagé, informez vos utilisateurs au moins 48 heures à l’avance et réservez des créneaux réguliers pour les vérifications système et les mises à jour mineures.
+      </p>
+      <h3>Sauvegardes</h3>
+      <p>
+        Contrôlez quotidiennement l’état des sauvegardes automatiques et surveillez les rapports d’exécution. Toute alerte d’échec doit déclencher une investigation immédiate.
+      </p>
+      <p>
+        Testez trimestriellement la restauration dans un environnement de staging pour garantir que les procédures fonctionnent en cas d’incident réel.
+      </p>
+    </section>
+
+    <section id="opt" class="tab-content">
+      <h2>Optimisation</h2>
+      <h3>Performances</h3>
+      <p>
+        Utilisez le tableau de bord intégré et des outils externes pour surveiller l’utilisation CPU, la mémoire et la latence des requêtes. Identifiez rapidement les goulots d’étranglement et ajustez les ressources.
+      </p>
+      <p>
+        Analysez régulièrement les logs de performance pour anticiper les pics de charge et éviter toute dégradation de l’expérience utilisateur.
+      </p>
+      <h3>Cache</h3>
+      <p>
+        Activez un cache côté serveur pour les requêtes fréquentes et déployez un CDN pour mettre en cache les ressources statiques (images, scripts, styles).
+      </p>
+      <p>
+        Configurez des règles d’expiration adaptées et exploitez le caching de session pour réduire la charge sur la base de données.
+      </p>
+    </section>
+
+    <section id="sauv" class="tab-content">
+      <h2>Sauvegarde</h2>
+      <h3>Automatisée</h3>
+      <p>
+        Chaque nuit, Bonaventis exécute une sauvegarde complète de la base de données ainsi que des fichiers critiques, complétée par des sauvegardes incrémentielles toutes les heures.
+      </p>
+      <p>
+        Les copies sont cryptées et stockées sur des sites géorépliqués pour garantir une disponibilité et une sécurité maximales.
+      </p>
+      <h3>Restaurations</h3>
+      <p>
+        Pour lancer une restauration, ouvrez la section « Sauvegarde » puis « Restaurer », sélectionnez la date souhaitée et confirmez. Le système passe temporairement en mode maintenance.
+      </p>
+      <p>
+        Vous recevrez une notification à la fin de l’opération et pourrez vérifier l’intégrité des données restaurées.
+      </p>
+    </section>
+
+<!-- SECTION FAQ ADMINISTRATEUR -->
+<section id="faq" class="tab-content">
+  <h2>FAQ Administrateur</h2>
+
+  <div class="faq">
+    <!-- 1 -->
+    <div class="faq-item">
+      <button class="faq-question">1. Comment créer un compte utilisateur&nbsp;?</button>
+      <div class="faq-answer">
+        <p>
+          Dans le volet administrateur, ouvrez « Gestion des utilisateurs » puis cliquez sur « Ajouter un utilisateur ». Renseignez le nom, l’e-mail, attribuez un rôle et envoyez l’invitation.
+        </p>
+      </div>
+    </div>
+
+    <!-- 2 -->
+    <div class="faq-item">
+      <button class="faq-question">2. Comment modifier les droits d’un utilisateur&nbsp;?</button>
+      <div class="faq-answer">
+        <p>
+          Allez dans « Gestion des utilisateurs », sélectionnez le compte, cliquez sur « Modifier », ajustez rôle et permissions (missions, rapports, bons) puis enregistrez.
+        </p>
+      </div>
+    </div>
+
+    <!-- 3 -->
+    <div class="faq-item">
+      <button class="faq-question">3. Comment supprimer un utilisateur&nbsp;?</button>
+      <div class="faq-answer">
+        <p>
+          Dans « Gestion des utilisateurs », cliquez sur l’icône de suppression à côté du compte et confirmez. L’utilisateur est immédiatement désactivé et ses données archivées.
+        </p>
+      </div>
+    </div>
+
+    <!-- 4 -->
+    <div class="faq-item">
+      <button class="faq-question">4. Comment réinitialiser un mot de passe&nbsp;?</button>
+      <div class="faq-answer">
+        <p>
+          Dans le profil de l’utilisateur, cliquez sur « Réinitialiser le mot de passe ». Un e-mail contenant un lien à usage unique est envoyé, ou vous pouvez définir un mot de passe temporaire.
+        </p>
+      </div>
+    </div>
+
+    <!-- 5 -->
+    <div class="faq-item">
+      <button class="faq-question">5. Comment configurer les notifications e-mail&nbsp;?</button>
+      <div class="faq-answer">
+        <p>
+          Dans « Paramètres » &gt; « Notifications », cochez les alertes souhaitées (création de missions, rappels) et personnalisez l’objet et le contenu des e-mails.
+        </p>
+      </div>
+    </div>
+
+    <!-- 6 -->
+    <div class="faq-item">
+      <button class="faq-question">6. Comment exporter les données de la plateforme&nbsp;?</button>
+      <div class="faq-answer">
+        <p>
+          Ouvrez « Export des données », choisissez les modules et la période, sélectionnez le format (CSV, Excel) et lancez l’export. Un lien de téléchargement vous sera envoyé par e-mail.
+        </p>
+      </div>
+    </div>
+
+    <!-- 7 -->
+    <div class="faq-item">
+      <button class="faq-question">7. Comment importer une sauvegarde&nbsp;?</button>
+      <div class="faq-answer">
+        <p>
+          Dans « Sauvegarde » &gt; « Import », téléversez le fichier, vérifiez son intégrité (checksum) et cliquez sur « Importer ». Testez d’abord en staging si possible.
+        </p>
+      </div>
+    </div>
+
+    <!-- 8 -->
+    <div class="faq-item">
+      <button class="faq-question">8. Comment planifier des sauvegardes automatiques&nbsp;?</button>
+      <div class="faq-answer">
+        <p>
+          Dans « Sauvegarde » &gt; « Paramètres », activez la planification, définissez la fréquence (quotidienne à 2 h par défaut) et la durée de rétention.
+        </p>
+      </div>
+    </div>
+
+    <!-- 9 -->
+    <div class="faq-item">
+      <button class="faq-question">9. Comment consulter les journaux système&nbsp;?</button>
+      <div class="faq-answer">
+        <p>
+          Accédez à « Diagnostic » &gt; « Journaux », utilisez les filtres par type et date, puis exportez si nécessaire.
+        </p>
+      </div>
+    </div>
+
+    <!-- 10 -->
+    <div class="faq-item">
+      <button class="faq-question">10. Comment restaurer une sauvegarde&nbsp;?</button>
+      <div class="faq-answer">
+        <p>
+          Dans « Sauvegarde » &gt; « Restauration », sélectionnez la date, cliquez sur « Restaurer » et confirmez. Vous serez notifié à la fin de l’opération.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+ <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+  <div class="container footer-container">
+    <div class="footer-column">
+      <div class="logo-footer"></div>
+      <h5>Bonaventis</h5>
+      <p>Pour un futur collaboratif et participatif, impliquant des participants dans la vie collective</p>
+    </div>
+    <div class="footer-column">
+      <h5>Nos Services</h5>
+      <a href="about.html">Origine et présentation</a>
+      <a href="conseils.html">Conseils et FAQ</a>
+      <a href="tarifs.html">Tarifs</a>
+    </div>
+    <div class="footer-column">
+      <h5>À propos</h5>
+      <a href="About.html">Notre équipe</a>
+      <a href="services.html">Carrières</a>
+    </div>
+    <div class="footer-column">
+      <h5>Contact</h5>
+      <p>+33 06 95 57 38 63</p>
+      <p><a href="mailto:bonaventis.prjct@gmail.com">bonaventis.prjct@gmail.com</a></p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <small>
+      <a href="legal.html#mentions">Mentions légales</a> | 
+      <a href="legal.html#confidentialite">Politique de confidentialité</a> | 
+      <a href="legal.html#cookies">Gestion des cookies</a>
+    </small>
+  </div>
+</footer>
+
+  <!-- JS onglets & FAQ identical to admin -->
+  <script>
+    // Onglets
+    document.querySelectorAll('#subnav-admin a').forEach(tab=>{
+      tab.addEventListener('click', e=>{
+        e.preventDefault();
+        document.querySelectorAll('#subnav-admin a').forEach(a=>a.classList.remove('active'));
+        tab.classList.add('active');
+        document.querySelectorAll('.tab-content').forEach(sec=>{
+          sec.id===tab.dataset.target
+            ? sec.classList.add('active')
+            : sec.classList.remove('active');
+        });
+      });
+    });
+    // FAQ
+    document.querySelectorAll('.faq-question').forEach(q=>{
+      q.addEventListener('click', ()=> q.parentElement.classList.toggle('open'));
+    });
+  </script>
+</body>
+</html>

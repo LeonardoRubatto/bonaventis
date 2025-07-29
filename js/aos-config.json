@@ -1,0 +1,18 @@
+{
+  "text": {
+    "selectors": ["h1, h2, h3, h4, p, small, a.btn"],
+    "effect": "fade-up"
+  },
+  "image": {
+    "selectors": ["img"],
+    "directions": {
+      "left": "fade-right",
+      "right": "fade-left",
+      "default": "fade-up"
+    }
+  },
+  "positionClasses": {
+    "left": ["setup-image"],
+    "right": ["contact-image"]
+  }
+}

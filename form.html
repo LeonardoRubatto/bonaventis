@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contactez-nous - Bonaventis</title>
+  <link rel="icon" href="img/logowhite.png" type="image/svg+xml">
+  <link rel="stylesheet" href="about.css">
+  <!-- Styles spécifiques pour Contact -->
+  <style>
+    /* Variables pour le logo et les champs */
+    :root {
+      --contact-logo-width: 220px;
+      --contact-logo-top: 2.2rem;
+      --contact-logo-left: 50%;
+      --form-bg: rgba(255,255,255,0.85);
+      --field-bg: rgba(255,255,255,0.7);
+      --field-radius: 12px;
+      --field-padding: 0.75rem 1rem;
+      --field-border: none;
+    }
+
+    /* Fond flou */
+    body.page-contact {
+      position: relative;
+      overflow-x: hidden;
+    }
+    body.page-contact::before {
+      content: '';
+      position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+      background: url('img/abstrait.png') center/cover no-repeat;
+      filter: blur(60px); z-index: 0;
+    }
+    header.header, footer.footer {
+      position: relative; z-index: 10; background: var(--color-primary);
+    }
+
+    /* Section Hero */
+    .contact-hero {
+      position: relative; height: 120vh;
+      display: flex; align-items: center; justify-content: center;
+      padding: 0 1rem; background: transparent; z-index: 1;
+    }
+    .contact-hero .contact-logo {
+      position: absolute; top: var(--contact-logo-top);
+      left: var(--contact-logo-left); width: var(--contact-logo-width);
+      transform: translateX(-50%); z-index: 2;
+    }
+    .contact-hero .slogan {
+      font-family: Arial, sans-serif; font-size: 2rem;
+      line-height: 1.4; max-width: 700px; text-align: center;
+      color: white; font-weight: 400; /* Poids régulier */
+      margin: 0 auto;
+    }
+
+    /* Formulaire */
+    .contact-form-wrapper {
+      position: relative; z-index: 1;
+      background: var(--form-bg); max-width: 580px;
+      margin: 4rem auto; padding: 2.5rem;
+      border-radius: 16px; box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+      backdrop-filter: blur(10px); font-family: Arial, sans-serif;
+      color: #111;
+    }
+    .contact-form-wrapper h2 {
+      margin-bottom: 1.5rem; font-size: 1.75rem;
+      text-align: center; color: var(--color-primary);
+    }
+    .form-group { margin-bottom: var(--spacing-x); }
+    .form-group label {
+      display: block; font-weight: 400; margin-bottom: 0.5rem;
+    }
+    .form-group select,
+    .form-group input,
+    .form-group textarea {
+      width: 100%; padding: var(--field-padding);
+      background: var(--field-bg); border: var(--field-border);
+      border-radius: var(--field-radius); font-size: 1rem;
+      transition: box-shadow 0.2s; font-family: Arial, sans-serif;
+      appearance: none; -webkit-appearance: none; -moz-appearance: none;
+      cursor: pointer;
+    }
+    .form-group select:focus,
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      box-shadow: 0 0 0 2px rgba(40,53,147,0.2);
+    }
+    /* Placeholder et options */
+    .form-group select option[disabled] { display: none; }
+    .form-group select option:first-child { color: #888; }
+
+    button.btn {
+      width: 100%; padding: 0.85rem;
+      background: var(--color-primary); color: #fff;
+      font-size: 1rem; font-weight: 500; border: none;
+      border-radius: var(--field-radius); cursor: pointer;
+      transition: background 0.2s; font-family: Arial, sans-serif;
+    }
+    button.btn:hover { background: #283593; }
+
+    .custom-message-group { display: none; }
+    .thanks {
+      background: var(--color-light-bg); min-height: 100vh;
+      display: flex; justify-content: center; align-items: center;
+      flex-direction: column; text-align: center; padding: 2rem;
+      z-index: 1; position: relative;
+    }
+    .thanks h2 {
+      font-size: 2rem; color: var(--color-primary); margin-bottom: 1rem;
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script defer src="js/aos-init.js"></script>
+</head>
+<body class="page-contact">
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container nav-container">
+      <div class="logo"></div>
+      <nav class="nav">
+        <a href="général.html">Accueil</a>
+        <a href="services.html">Nos services</a>
+        <a href="About.html">About Us</a>
+        <a href="conseils.html">Conseils</a>
+        <a href="tarifs.html" class="active">Tarifs</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Intro pleine page -->
+    <section class="contact-hero" data-aos="fade-in">
+      <img src="img/logowhite.png" alt="Logo Bonaventis" class="contact-logo">
+      <p class="slogan">Partagez en quelques secondes votre projet via ce formulaire et nous vous recontacterons avec plaisir.</p>
+    </section>
+
+    <!-- Formulaire apparait après scroll -->
+    <section class="contact-form-wrapper" data-aos="fade-up">
+      <h2>Formulaire de Contact</h2>
+      <form id="contactForm" action="traitement.php" method="POST">
+        <div class="form-group">
+          <label for="mode">Mode de contact souhaité</label>
+          <select name="mode" id="mode" required>
+            <option value="" disabled selected>Sélectionnez</option>
+            <option value="téléphonique">Téléphonique</option>
+            <option value="visio">Visio</option>
+            <option value="présentiel">Présentiel</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="nom">Nom, Prénom ou Institution</label>
+          <input type="text" id="nom" name="nom" placeholder="Votre nom ou institution" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Adresse e-mail</label>
+          <input type="email" id="email" name="email" placeholder="Votre e-mail" required>
+        </div>
+        <div class="form-group">
+          <label for="sujet">Formule désirée</label>
+          <select name="sujet" id="sujet" required>
+            <option value="" disabled selected>Sélectionnez</option>
+            <option value="hébergé">Hébergé</option>
+            <option value="licence">Licence</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="predefMsg">Votre demande</label>
+          <select name="predefMsg" id="predefMsg" required>
+            <option value="" disabled selected>Sélectionnez</option>
+            <option value="Je suis intéressé par la formule hébergée et souhaite être rappelé.">Je suis intéressé</option>
+            <option value="Je souhaite obtenir des informations détaillées sur la licence.">Je veux des infos</option>
+            <option value="Je suis prêt à souscrire dès maintenant et souhaite finaliser mon inscription.">Je suis prêt à payer</option>
+            <option value="autre">Autre</option>
+          </select>
+        </div>
+        <div class="form-group custom-message-group" id="customMessageGroup">
+          <label for="message">Votre message</label>
+          <textarea id="message" rows="5" placeholder="Écrivez votre message..."></textarea>
+        </div>
+        <input type="hidden" name="message" id="messageHidden">
+        <button type="submit" class="btn">Envoyer</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="container footer-container">
+      <div class="footer-column">
+        <div class="logo-footer"></div>
+        <h5>Bonaventis</h5>
+        <p>Pour un futur collaboratif et participatif, impliquant chaque membre dans la vie collective.</p>
+      </div>
+      <div class="footer-column">
+        <h5>Nos Services</h5>
+        <a href="about.html">Origine et présentation</a>
+        <a href="conseils.html">Conseils et FAQ</a>
+        <a href="tarifs.html">Tarifs</a>
+      </div>
+      <div class="footer-column">
+        <h5>À propos</h5>
+        <a href="About.html">Notre équipe</a>
+        <a href="services.html">Carrières</a>
+      </div>
+      <div class="footer-column">
+        <h5>Contact</h5>
+        <p>+33 06 95 57 38 63</p>
+        <p><a href="mailto:bonaventis.prjct@gmail.com">bonaventis.prjct@gmail.com</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <small>
+        <a href="legal.html#mentions">Mentions légales</a> | 
+        <a href="legal.html#confidentialite">Politique de confidentialité</a> | 
+        <a href="legal.html#cookies">Gestion des cookies</a>
+      </small>
+    </div>
+  </footer>
+
+  <!-- Scripts JS -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      AOS.init({ once: true, duration: 600 });
+      const params = new URLSearchParams(window.location.search);
+      const sujetParam = params.get('sujet'); if (sujetParam) document.getElementById('sujet').value = decodeURIComponent(sujetParam);
+      const predef = document.getElementById('predefMsg');
+      const customGroup = document.getElementById('customMessageGroup');
+      const customTextarea = document.getElementById('message');
+      const hiddenMessage = document.getElementById('messageHidden');
+      predef.addEventListener('change', () => {
+        if (predef.value === 'autre') { customGroup.style.display = 'block'; customTextarea.required = true; hiddenMessage.value = ''; }
+        else if (predef.value) { customGroup.style.display = 'none'; customTextarea.required = false; hiddenMessage.value = predef.value; }
+        else { customGroup.style.display = 'none'; customTextarea.required = false; hiddenMessage.value = ''; }
+      });
+      const form = document.getElementById('contactForm');
+      form.addEventListener('submit', (e) => {
+        e.preventDefault(); const formData = new FormData(form);
+        if (predef.value === 'autre') formData.set('message', customTextarea.value);
+        fetch(form.action, { method: 'POST', body: formData })
+          .then(res => { if (res.ok) document.body.innerHTML = '<div class="thanks" data-aos="fade-up"><h2>Merci pour votre message !</h2><p>Nous reviendrons vers vous bientôt.</p></div>'; else alert('Une erreur est survenue.'); })
+          .catch(() => alert('Erreur réseau, réessayez.'));
+      });
+    });
+  </script>
+</body>
+</html>

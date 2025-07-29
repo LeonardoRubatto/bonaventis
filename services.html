@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nos Services</title>
+  <link rel="icon" href="img/logowhite.png" type="image/svg+xml">
+  <link rel="stylesheet" href="about.css" />
+
+
+
+<!-- AOS v2 – Styles et scripts -->
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+/>
+<script defer src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+<!-- Config AOS INLINE -->
+<script id="aos-config" type="application/json">
+{
+  "text": {
+    "selectors": [
+      "h1","h2","h3","h4",
+      "p","small","a.btn",
+      "li",
+      ".contact-image-placeholder",
+      ".contact-form-vertical"
+    ],
+    "effect": "fade-up"
+  },
+  "image": {
+    "selectors": ["img"],
+    "directions": {
+      "left": "fade-right",
+      "right": "fade-left",
+      "default": "fade-up"
+    }
+  },
+  "positionClasses": {
+    "left": ["setup-image"],
+    "right": ["contact-image"]
+  },
+  "excludeSelectors": ["footer", ".no-aos"]
+}
+</script>
+
+<!-- Script d'initialisation AOS -->
+<script defer src="js/aos-init.js"></script>
+
+
+
+
+
+
+  <style>
+
+
+ /* Floating feature cards */
+
+.services-page .features-mosaic {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--spacing-vertical);
+  margin-top: var(--spacing-vertical);
+}
+
+.services-page .feature-card {
+  background: #fff;
+  border: 1px solid var(--color-gray);
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: visible; /* pour laisser la “fausse ombre” dépasser */
+}
+
+/* Pseudo‑élément pour l’ombre colorée (sans flou) */
+.services-page .feature-card::before {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  top: 100%;       /* juste sous la carte */
+  left: 0;
+  width: 100%;
+  height: 8px;     /* épaisseur de l’ombre ; ajuste à ton goût */
+  background: url('img/abstrait.png') no-repeat center/cover;
+  opacity: 0;
+  transform: translateY(0);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: -1;     /* derrière la carte */
+}
+
+.services-page .feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: none; /* on remplace l’ombre grise par l’image */
+}
+
+.services-page .feature-card:hover::before {
+  opacity: 0.6;           /* réglage de la transparence pour l’effet “ombre” */
+  transform: translateY(4px); /* synchronisé avec le translateY de la carte */
+}
+
+
+/* Bullet list spacing */
+    .services-page .values-list li,
+    .services-page .audience-item p {
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+    }
+    /* Process steps styling */
+    .services-page .process-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: var(--spacing-vertical);
+      margin-top: var(--spacing-vertical);
+    }
+    .services-page .step {
+      background: var(--color-light-bg);
+      border-radius: 8px;
+      padding: 1rem;
+      text-align: center;
+    }
+    .services-page .step-circle {
+      background: var(--color-primary);
+      color: #fff;
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      margin: 0 auto 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="container nav-container">
+      <div class="logo"></div>
+      <nav class="nav">
+        <a href="général.html">Accueil</a>
+        <a href="services.html" class="active">Nos services</a>
+        <a href="About.html">About Us</a>
+        <a href="conseils.html">Conseils</a>
+        <a href="tarifs.html">Tarifs</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+
+
+
+
+
+  <main class="services-page" style="margin-top: 100px;">
+    <!-- HERO -->
+    <section class="intro">
+      <div class="container intro-text">
+        <h1>Bonaventis : réinventez l’engagement collectif</h1>
+        <p class="no-aos">Pour un futur meilleur</p>
+    </section>
+
+    <!-- OVERVIEW -->
+    <section id="overview" class="detail-section">
+      <div class="container overview-grid">
+        <div class="overview-text">
+          <h2>Qu’est-ce que Bonaventis ?</h2>
+          <p>Bonaventis est une plateforme web pensée pour reconnaître et amplifier chaque contribution individuelle au sein d’une communauté. Grâce à un système de crédits virtuels, chaque action bénéfique — qu’il s’agisse de tutorat, d’animations ou de services civiques comme tout simplement du rangement ou du nettoyage — est valorisée et enregistrée de façon transparente. Notre ambition est de créer un environnement où la solidarité et l’engagement deviennent des leviers concrets de développement personnel et collectif.</br></br></p>
+
+          <h3>Comment ça marche ?</h3>
+          <p>Les responsables de votre établissement définissent des missions adaptées à vos besoins, en attribuant à chacune une valeur en crédits virtuels. Les participants réalisent les actions, le communiquent au site et, après approbation d’un référent — épreuve qui évite toute fraude — reçoivent les crédits. </br>Les crédits accumulés se traduisent ensuite par des « bons » échangeables dans différentes boutiques intégrées au système, une caffetaria interne par exemple, où ils peuvent être convertis en accès à des ateliers, tickets cantine ou privilèges personnalisés — selon les structure disponibles dans chaque établissements.</br></br></p>
+
+          <h3>Pourquoi choisir Bonaventis ?</h3>
+          <p>En adoptant Bonaventis, vous dynamisez la motivation de vos apprenants ou bénéficiaires en offrant une reconnaissance tangible et immédiate. Cette approche favorise non seulement la cohésion d’équipe, mais aussi l’autonomie individuelle, en responsabilisant chacun sur ses contributions. Par ailleurs, un tableau de bord intuitif fournit des statistiques en temps réel et des rapports exportables, vous permettant d’analyser les données d’engagement pour ajuster et enrichir vos programmes selon vos objectifs pédagogiques et sociaux.</p>
+        </div>
+        <div class="overview-image"></div>
+      </div>
+    </section>
+
+    <!-- MISSION & VALEURS -->
+    <section class="detail-section section--light">
+      <div class="container">
+        <h2>Notre mission &amp; nos valeurs</h2>
+        <p>
+          Notre vocation est de créer un cercle vertueux où l’effort, l’entraide et la solidarité sont  
+          valorisés de manière concrète. Grâce à Bonaventis, vous :
+        </p>
+        <ul class="values-list">
+          <li><strong>Renforcez l’autonomie</strong> en laissant chaque structure définir ses missions et budgets.</li>
+          <li><strong>Assurez la transparence</strong> grâce à un suivi en temps réel et des rapports exportables.</li>
+          <li><strong>Fédérez la cohésion</strong> par des challenges collectifs et des classements motivants.</li>
+          <li><strong>Développez la responsabilisation</strong> : chaque action donne lieu à une récompense tangible.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- POUR QUI -->
+    <section class="detail-section">
+      <div class="container">
+        <h2>Pour qui ? Dans quel contexte ?</h2>
+        <div class="values-grid">
+          <div class="value-item">
+            <img src="img/école.png" alt="Établissements scolaires" class="value-icon"/>
+            <h3>Établissements scolaires</h3>
+            <p>Lycées, collèges : valorisez l’engagement des élèves et du personnel au quotidien.</p>
+          </div>
+          <div class="value-item">
+            <img src="img/struct.png" alt="Structures rééducatives" class="value-icon"/>
+            <h3>Structures rééducatives</h3>
+            <p>Cadres de soin et d’insertion : motivez et responsabilisez vos participants.</p>
+          </div>
+          <div class="value-item">
+            <img src="img/prison.png" alt="Milieu pénitentiaire" class="value-icon"/>
+            <h3>Milieu pénitentiaire</h3>
+            <p>Programme de réinsertion : redonnez du sens et favorisez la solidarité.</p>
+          </div>
+          <div class="value-item">
+            <img src="img/entreprise.png" alt="Associations & entreprises" class="value-icon"/>
+            <h3>Associations & entreprises</h3>
+            <p>Renforcez la cohésion interne et récompensez les initiatives solidaires.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FONCTIONNALITÉS DÉTAILLÉES -->
+    <section id="features" class="detail-section section--light">
+      <div class="container">
+        <h2>Fonctionnalités détaillées</h2>
+        <div class="features-mosaic">
+          <div class="feature-card">
+            <h3>Création & gestion de missions</h3>
+            <p>Paramétrez facilement titre, description, fréquence, valeur en bons et modalités de validation (photo, QR code, commentaire).</p>
+          </div>
+          <div class="feature-card">
+            <h3>Boutique intégrée</h3>
+            <p>Catalogue produits et services avec prix en bons/€, génération et scan instantané de QR codes pour l’échange.</p>
+          </div>
+          <div class="feature-card">
+            <h3>Suivi & reporting</h3>
+            <p>Tableaux de bord en temps réel, export CSV/PDF, graphiques intégrés et alertes pour piloter votre budget.</p>
+          </div>
+          <div class="feature-card">
+            <h3>Administration & droits</h3>
+            <p>Profils multiples (participant, validateur, cafétéria, admin), gestion des droits, plafonds et budgets dynamiques.</p>
+          </div>
+          <div class="feature-card">
+            <h3>Statistiques pédagogiques</h3>
+            <p>Analyses de participation utilisables en cours (SES, Maths, Management) pour illustrer vos enseignements.</p>
+          </div>
+          <div class="feature-card">
+            <h3>Sécurité & fiabilité</h3>
+            <p>QR codes uniques, dates de péremption, journalisation anti-fraude et accès chiffré pour une totale confiance.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DÉPLOIEMENT -->
+    <section id="process" class="detail-section">
+      <div class="container">
+        <h2>Déploiement en 4 étapes</h2>
+        <div class="process-steps">
+          <div class="step">
+            <div class="step-circle">1</div>
+            <h4>Consultation initiale</h4>
+            <p>Étude de vos besoins, définition du périmètre et du budget.</p>
+          </div>
+          <div class="step">
+            <div class="step-circle">2</div>
+            <h4>Installation rapide</h4>
+            <p>Déploiement sur serveur local ou cloud, configuration en quelques clics.</p>
+          </div>
+          <div class="step">
+            <div class="step-circle">3</div>
+            <h4>Formation & support</h4>
+            <p>Ateliers de prise en main pour administrateurs et utilisateurs.</p>
+          </div>
+          <div class="step">
+            <div class="step-circle">4</div>
+            <h4>Évolutions & maintenance</h4>
+            <p>Mises à jour régulières, hotline et accompagnement continu.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- === MISE EN PLACE & TARIFS === -->
+<section id="setup" class="detail-section section--accent-blue">
+  <div class="container setup-grid">
+    <!-- Colonne 1 : image à gauche -->
+    <div class="setup-image">
+      <img src="img/fond22.png" alt="Déploiement Bonaventis">
+    </div>
+    <!-- Colonne 2 : texte à droite -->
+    <div class="setup-info">
+      <h2>Mise en place &amp; tarifs détaillés</h2>
+      <p>
+        Avec Bonaventis, le déploiement se fait en quelques clics : installation sur
+        votre serveur ou cloud, configuration personnalisée et formation de vos équipes.
+      </p>
+      <p>
+        Nos offres s’adaptent à la taille de votre structure et à vos besoins :
+      </p>
+      <ul>
+        <li>Installation clé en main</li>
+        <li>Formation des administrateurs et support 24/7</li>
+        <li>Mises à jour et évolutions incluses</li>
+      </ul>
+      <p>
+        Tarifs : à partir de <strong>5 € / mois</strong>
+      </p>
+      <a href="tarifs.html" class="btn btn-outline-light">Découvrir nos tarifs</a>
+    </div>
+  </div>
+</section>
+
+<!-- === CONTACTEZ-NOUS === -->
+<section id="contact" class="detail-section section--contact">
+  <div class="container contact-grid">
+    <!-- Colonne 1 : texte -->
+    <div class="contact-info">
+      <small>Contactez-nous</small>
+      <h2>Nous sommes à votre écoute</h2>
+      <p>
+        Vous avez des questions ? Besoin d’une démo personnalisée ? Notre équipe est prête
+        à vous accompagner dans votre projet et à répondre à tous vos besoins.
+      </p>
+      <p>
+        Remplissez le formulaire ou appelez-nous directement : nous reviendrons vers vous
+        sous 24 h.
+      </p>
+      <a href="contact.html" class="btn btn-outline-primary">Nous contacter</a>
+    </div>
+    <!-- Colonne 2 : image -->
+    <div class="contact-image">
+      <img src="img/contact2.png" alt="Équipe Bonaventis">
+    </div>
+  </div>
+</section>
+
+
+
+
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+  <div class="container footer-container">
+    <div class="footer-column">
+      <div class="logo-footer"></div>
+      <h5>Bonaventis</h5>
+      <p>Pour un futur collaboratif et participatif, impliquant des participants dans la vie collective</p>
+    </div>
+    <div class="footer-column">
+      <h5>Nos Services</h5>
+      <a href="about.html">Origine et présentation</a>
+      <a href="conseils.html">Conseils et FAQ</a>
+      <a href="tarifs.html">Tarifs</a>
+    </div>
+    <div class="footer-column">
+      <h5>À propos</h5>
+      <a href="About.html">Notre équipe</a>
+      <a href="services.html">Carrières</a>
+    </div>
+    <div class="footer-column">
+      <h5>Contact</h5>
+      <p>+33 06 95 57 38 63</p>
+      <p><a href="mailto:bonaventis.prjct@gmail.com">bonaventis.prjct@gmail.com</a></p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <small>
+      <a href="legal.html#mentions">Mentions légales</a> | 
+      <a href="legal.html#confidentialite">Politique de confidentialité</a> | 
+      <a href="legal.html#cookies">Gestion des cookies</a>
+    </small>
+  </div>
+</footer>
